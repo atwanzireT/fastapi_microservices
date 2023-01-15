@@ -49,3 +49,11 @@ def format(pk : str):
 @app.post('/products')
 async def create_product(product : Product):
     return product.save()
+
+@app.get('/product/{pk}')
+async def get_product(pk : str):
+    return Product.get(pk)
+    
+@app.delete('/products/{pk}')
+async def delete_product(pk : str):
+    return Product.get(pk).delete()
